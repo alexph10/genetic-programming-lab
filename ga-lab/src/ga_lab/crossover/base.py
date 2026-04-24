@@ -1,19 +1,27 @@
 from abc import ABC, abstractmethod
-from typing import TypeVar
+from typing import Generic, TypeVar
 
-Chromosome = TypeVar("Chromosome")
+Chromosome = TypeVar("Chromosome", list, tuple)
 
 
-class BaseCrossover(ABC):
+class BaseCrossover(ABC, Generic[Chromosome]):
     """
     Abstract base class for all crossover operators.
 
     Every crossover operator must implement the 'cross' method, which
     accepts two parent chromosomes and returns two offspring.
+
+    Type Parameters
+    ---------------
+
+    Chromosome : list | tuple
+        The chromosome representation used by the operator
     """
 
     @abstractmethod
-    def cross(self, parent1: list, parent2: list) -> tuple[list, list]:
+    def cross(
+        self, parent1: Chromosome, parent2: Chromosome
+    ) -> tuple[Chromosome, Chromosome]:
         """
         Perform crossover between two parent chromosomes.
 
@@ -31,7 +39,7 @@ class BaseCrossover(ABC):
         """
         ...
 
-    def validate(self, parent1: list, parent2: list) -> None:
+    def validate(self, parent1: Chromosome, parent2: Chromosome) -> None:
         """
         Validate that two parents are compatible for crossover/
         Raises ValueError if parents have different lengths.
