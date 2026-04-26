@@ -2,8 +2,8 @@ import random
 
 import pytest
 
-from ga_lab.mutation.bit_flip import BitFlipMutation
 from src.ga_lab.crossover.base import Chromosome
+from src.ga_lab.mutation.bit_flip import BitFlipMutation
 
 
 @pytest.fixture

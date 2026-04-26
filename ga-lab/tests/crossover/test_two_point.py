@@ -2,7 +2,7 @@ import random
 import pytest
 
 
-from ga_lab.crossover.two_point import TwoPointCrossover
+from src.ga_lab.crossover.two_point import TwoPointCrossover
 
 @pytest.fixture
 def crossover():

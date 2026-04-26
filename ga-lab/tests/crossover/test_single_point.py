@@ -1,6 +1,6 @@
 import pytest
 
-from ga_lab.crossover.single_point import SinglePointCrossover
+from src.ga_lab.crossover.single_point import SinglePointCrossover
 
 
 @pytest.fixture
