@@ -9,7 +9,3 @@ The goal of this repository is to build genetic algorithm concepts step by step 
 - Crossover methods
 - Basic genetic algorithm operators
 - Python implementations for study and experimentation
-
-## License
-
-MIT
